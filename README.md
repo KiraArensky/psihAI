@@ -11,7 +11,7 @@
 - **Методы преодоления стресса и тревоги**,
 - **Ссылки на профессиональные ресурсы для дальнейшей поддержки**.
 
-Дизайн веб приложения: https://www.figma.com/proto/GTdHehucvIaE1bRBQGHR7h/КЕЙС-1?page-id=0%3A1&node-id=1-11&node-type=canvas&viewport=-45%2C601%2C0.55&t=ajYZtbzDYyPiaZUG-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A11
+Дизайн веб приложения: [figma](https://www.figma.com/design/GTdHehucvIaE1bRBQGHR7h/КЕЙС-1?node-id=0-1)
 
 ## Структура проекта
 
