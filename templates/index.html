@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Мессенджер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chat-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            height: 400px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .user, .bot {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .user {
+            background-color: #d1f7d6;
+            align-self: flex-end;
+        }
+        .bot {
+            background-color: #f1f1f1;
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+<h2>ChatGPT Мессенджер</h2>
+
+<div id="chat-box">
+    {% for message in chat_history %}
+        <div class="{{ message['sender'] }}">{{ message['text'] }}</div>
+    {% endfor %}
+</div>
+
+<form action="/chat" method="post" style="display: flex; justify-content: center; margin-top: 10px;">
+    <input type="text" name="user_input" placeholder="Введите сообщение" required style="width: 400px;">
+    <button type="submit">Отправить</button>
+</form>
+
+</body>
+</html>
