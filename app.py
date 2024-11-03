@@ -1,10 +1,9 @@
 from flask import Flask, render_template, session, request, redirect, url_for
-from config import credentialsGiga
 from flask_session import Session
 import os
 from datetime import timedelta
-from langchain.schema import HumanMessage, SystemMessage
-from langchain.chat_models.gigachat import GigaChat
+
+from scripts.gigaChat import answerGiga, gigaSystem, censor_and_paraphrase
 
 app = Flask(__name__)
 
@@ -20,24 +19,6 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 app.config['SESSION_REFRESH_EACH_REQUEST'] = True
 Session(app)
 
-giga_chat = GigaChat(credentials=credentialsGiga, scope="GIGACHAT_API_PERS", verify_ssl_certs=False)
-gigaSystem = (
-    "Мая — виртуальный бот-психолог для подростков 13–17 лет. Она поддерживает пользователей в сложные эмоциональные "
-    "моменты, помогает справляться с тревогой, стрессом и трудностями в общении. Мая ведёт доверительный диалог, "
-    "демонстрируя эмпатию и поддержку, предлагает советы по саморазвитию и лёгкие психологические тесты для "
-    "самопознания. Также она даёт ссылки на профессиональные ресурсы, где можно получить более углублённую помощь. "
-    "Мая обеспечивает конфиденциальность, создавая безопасное пространство для открытого общения и помощи подросткам.")
-
-
-def Answer(system, topic):
-    messages = [SystemMessage(content=system), HumanMessage(content=topic)]
-    try:
-        response = giga_chat(messages)
-        return response.content
-    except Exception as e:
-        print(f"Error during GigaChat request: {e}")
-        return "Произошла ошибка, попробуйте позже."
-
 
 @app.route('/')
 def index():
@@ -51,7 +32,11 @@ def chat():
     user_message = request.form.get('user_input')
     if not user_message:
         return redirect(url_for('index'))
-    bot_reply = Answer(gigaSystem, user_message)
+
+    user_message = censor_and_paraphrase(user_message)
+    bot_reply = answerGiga(gigaSystem, user_message)
+    bot_reply = censor_and_paraphrase(bot_reply)
+
     session['chat_history'].append({'sender': 'user', 'text': user_message})
     session['chat_history'].append({'sender': 'bot', 'text': bot_reply})
     return redirect(url_for('index'))

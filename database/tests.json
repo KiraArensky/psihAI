@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Тест Сонди",
+    "link": "https://psytests.org/classic/szondi-run.html"
+  },
+  {
+    "title": "Шкала депрессии Бека",
+    "link": "https://psytests.org/depr/bdi-run.html"
+  },
+  {
+    "title": "Шкала Занга (Цунга) для самооценки депрессии",
+    "link": "https://jekyll-hyde.ru/test/online-test-shkala-depressii-zung/"
+  },
+  {
+    "title": "Опросник генерализованного тревожного расстройства, ГТР-7",
+    "link": "https://psytests.org/anxiety/gad7.html"
+  },
+  {
+    "title": "Цветовой тест Люшера",
+    "link": "https://psytests.org/luscher/fullcolor-run.html"
+  },
+  {
+    "title": "Проективный тест «Куб в пустыне»",
+    "link": "https://testometrika.com/personality-and-temper/the-cube-in-the-desert/"
+  },
+  {
+    "title": "Диагностика темперамента по Айзенку",
+    "link": "https://psytests.org/eysenck/mpi-run.html"
+  },
+  {
+    "title": "Расширенный тест Леонгарда — Шмишека",
+    "link": "https://psytests.org/accent/shmi98-run.html"
+  },
+  {
+    "title": "Методика экспресс-диагностики невроза Хека — Хесс",
+    "link": "http://psytests.org/clinical/bfb-run.html"
+  },
+  {
+    "title": "Тест эмоционального интеллекта Холла",
+    "link": "https://psytests.org/eq/hall-run.html"
+  }
+]
