@@ -9,49 +9,92 @@ h1 {
   font-height: 700;
 }
 
+.menu {
+  text-align: center;
+  margin: 40px 0;
+}
+.menu img {
+  margin: 0 20px;
+}
+
 header {
   text-align: center;
 }
-
-.chat-box {
+header .chat-box {
   margin: 0 auto;
   padding: 10px;
   border: 1px solid #ddd;
-  height: 400px;
+  height: 600px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-color: #FCFCFF;
 }
-
-.user, .bot {
+header .user, header .bot {
   margin: 5px;
   padding: 10px;
   border-radius: 5px;
 }
-
-.user {
+header .user {
   background-color: #E4E4FF;
   align-self: flex-end;
 }
-
-.bot {
+header .bot {
   background-color: #F3F3FF;
   align-self: flex-start;
 }
-
-input {
+header input {
   border-radius: 30px;
   border: none;
   box-shadow: 4px 5px 40px #E6E6FF;
   height: 40px;
   background-color: #FCFCFF;
 }
-input[type=image] {
+header input[type=image] {
   background-color: #FCFCFF;
 }
-input:focus {
+header input:focus {
   outline: none;
+}
+
+.menu {
+  background-color: #A394FF;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.tests {
+  font-family: Nunito, sans-serif;
+  background-color: #FCFCFF;
+  text-align: center;
+}
+.tests h1 {
+  text-align: center;
+  padding-bottom: 40px;
+  font-size: 48px;
+  font-weight: bold;
+}
+.tests .card-text {
+  text-decoration: underline;
+}
+.tests .card {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 4px 5px 40px #E6E6FF;
+  background-color: #E4E4FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.tests .card .card-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.tests .card .card-text {
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=style.css.map */

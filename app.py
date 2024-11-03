@@ -27,6 +27,16 @@ def index():
     return render_template('index.html', chat_history=session['chat_history'])
 
 
+@app.route('/tests')
+def test():
+    return render_template('tests.html')
+
+
+@app.route('/contacts')
+def conta():
+    return render_template('contakts.html')
+
+
 @app.route('/chat', methods=['POST'])
 def chat():
     user_message = request.form.get('user_input')

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подросток AI</title>
+    <title>Студент AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -11,20 +11,32 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<header>
-<img src="/static/images/robot_face.svg" alt="Мая">
-</header>
-
-<div class="chat-box">
-    {% for message in chat_history %}
-    <div class="{{ message['sender'] }}">{{ message['text'] }}</div>
-    {% endfor %}
+<div class="menu">
+    <a href="/tests">
+        <img id="menu_tests" src="/static/images/tests.svg" alt="tests">
+    </a>
+    <img id="menu_images" src="/static/images/robot_face.svg" alt="Мася">
+    <a href="/contacts">
+        <img id="menu_contacts" src="/static/images/Contacts.svg" alt="contacts">
+    </a>
 </div>
 
-<form action="/chat" method="post" style="display: flex; justify-content: center; margin-top: 10px;">
-    <input class="chat_input" type="text" name="user_input" placeholder="Расскажи о своей проблеме" required style="width: 400px;">
-    <input type="image" src="/static/images/send.svg" alt="Submit">
-</form>
+<header id="header">
+    <div class="chat-box">
+        {% for message in chat_history %}
+            <div class="{{ message['sender'] }}">{{ message['text'] }}</div>
+        {% endfor %}
+    </div>
+
+    <form action="/chat" method="post" style="display: flex; justify-content: center; margin-top: 10px;">
+        <input class="chat_input" type="text" name="user_input" placeholder="Расскажи о своей проблеме" required
+               style="width: 400px;">
+        <input type="image" src="/static/images/send.svg" alt="Submit">
+    </form>
+</header>
+
+<script>
+</script>
 
 </body>
 </html>

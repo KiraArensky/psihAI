@@ -1,9 +1,19 @@
-html{
+html {
   font-family: Nunito, sans-serif;
   background-color: $primary;
   color: $text;
 }
-h1{
+
+h1 {
   font-size: 25px;
   font-height: 700;
+}
+
+.menu {
+  text-align: center;
+  margin: 40px 0;
+
+  img {
+    margin: 0 20px; // Adjust the value to increase or decrease the spacing
+  }
 }

@@ -1,0 +1,46 @@
+header {
+  text-align: center;
+
+  .chat-box {
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    height: 600px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $bg;
+  }
+
+  .user, .bot {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .user {
+    background-color: #E4E4FF;
+    align-self: flex-end;
+  }
+
+  .bot {
+    background-color: #F3F3FF;
+    align-self: flex-start;
+  }
+
+  input {
+    border-radius: 30px;
+    border: none;
+    box-shadow: 4px 5px 40px #E6E6FF;
+    height: 40px;
+    background-color: $bg;
+
+    &[type="image"] {
+      background-color: $bg;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
